@@ -22,12 +22,13 @@ Az interaktív wizard végigvezet a beállításokon:
 2. **Megjelenítési név** — amit a felhasználók látnak
 3. **Leírás** — rövid leírás
 4. **Szerző** — `Név <email>` formátumban
-5. **Template** — `basic`, `advanced`, vagy `datatable`
+5. **Template** — `blank`, `basic`, `advanced`, `datatable`, vagy `sidebar`
 6. **Jogosultságok** — `database`, `notifications`, `remote_functions`
 
 Vagy megadhatod a nevet és a template-et közvetlenül:
 
 ```bash
+bunx @elyos-dev/create-app my-app --template blank
 bunx @elyos-dev/create-app my-app --template basic
 bunx @elyos-dev/create-app my-app --template advanced
 bunx @elyos-dev/create-app my-app --template datatable --no-install
@@ -37,12 +38,45 @@ bunx @elyos-dev/create-app my-app --template datatable --no-install
 
 | Template | Mire jó |
 |---|---|
+| `starter` | Tiszta lap — csak az SDK, te döntöd el mi kerül bele |
 | `basic` | Egyszerű UI alkalmazás, nincs szerver oldali logika |
 | `advanced` | Szerver függvényekkel, Settings komponenssel |
 | `datatable` | CRUD alkalmazás DataTable-lel és szerver CRUD műveletekkel |
 | `sidebar` | Oldalsávos navigációval rendelkező alkalmazás (AppLayout mód, `menu.json`) |
 
+#### `blank` template
+
+A `blank` template a legminimálisabb kiindulópont: csak az SDK és a kötelező fájlok kerülnek bele. A wizard a template kiválasztása után három follow-up kérdést tesz fel, amelyekkel opcionálisan hozzáadhatók a leggyakoribb funkciók:
+
+- **Oldalsáv navigáció?** — ha igen, létrejön a `src/components/` mappa egy `Overview.svelte` komponenssel és a `menu.json`
+- **Szerver függvények?** — ha igen, létrejön a `server/functions.ts` egy példa függvénnyel
+- **Adatbázis migrációk?** — ha igen, létrejön a `migrations/001_init.sql` egy minta tábladefinícióval. Az ElyOS installer telepítéskor automatikusan futtatja a migrációkat és prefixeli a táblaneveket a plugin sémájával (`plugin__app_id`)
+- **i18n fordítások?** — ha igen, létrejön a `locales/` mappa `hu.json` és `en.json` fájlokkal
+
+A generált struktúra (minden opcióval):
+
+```
+my-app/
+├── manifest.json
+├── src/
+│   ├── App.svelte           # Fő komponens
+│   ├── main.ts              # Belépési pont
+│   └── components/          # (ha oldalsáv: igen)
+│       └── Overview.svelte
+├── server/                  # (ha szerver függvények: igen)
+│   └── functions.ts
+├── migrations/              # (ha adatbázis migrációk: igen)
+│   └── 001_init.sql
+├── locales/                 # (ha i18n: igen)
+│   ├── hu.json
+│   └── en.json
+└── assets/
+    └── icon.svg
+```
+
 #### `basic` template
+
+A `basic` template egy egyszerű, egyoldalas alkalmazást generál. Ideális kezdőknek és egyszerű alkalmazásokhoz.
 
 A `basic` template egy egyszerű, egyoldalas alkalmazást generál. Ideális kezdőknek és egyszerű alkalmazásokhoz.
 

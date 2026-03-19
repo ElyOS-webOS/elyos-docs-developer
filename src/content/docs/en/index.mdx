@@ -1,29 +1,35 @@
 ---
 title: ElyOS Developer Documentation
-description: Official developer documentation for the ElyOS webOS system – plugins, SDK, architecture
+description: Official developer documentation for the ElyOS webOS system – architecture, database, state management, server actions and other core development topics
 template: splash
 hero:
   title: ElyOS Developer Documentation
-  tagline: Everything you need to develop, extend, and integrate with the ElyOS platform
+  tagline: Everything you need to know for ElyOS core development – from architecture to database
   actions:
     - text: Get Started
-      link: /en/
+      link: /en/getting-started/
       icon: right-arrow
       variant: primary
-    - text: GitHub
-      link: https://github.com
-      icon: github
+    - text: User Documentation
+      link: https://docs.elyos.hu
+      icon: external
       variant: secondary
 ---
 
 ## What is this documentation for?
 
-This site is intended for developers building on top of the ElyOS platform. Here you'll find architecture overviews, plugin system internals, SDK reference, server-side APIs, and integration guides.
+This site is for developers working on the ElyOS platform — whether developing the core, building your own applications, or extending the system. You'll find the monorepo structure, SvelteKit routing conventions, database management, state management patterns, server actions, authentication, and other essential development topics.
 
 ## Key Topics
 
-- Plugin development and deployment
-- WebOS SDK usage
-- Server-side APIs and database schema
-- Authentication and authorization
-- Building custom applications
+- Setting up the development environment and getting started
+- Monorepo structure and project architecture
+- SvelteKit routing and pages
+- Svelte 5 runes-based state management
+- Server actions – `command` / `query` pattern
+- Database – Drizzle ORM, schemas, migrations
+- Authentication – better-auth integration
+- Internationalization – database-backed i18n
+- Built-in application development
+- Logging, email, file handling
+- Testing and deployment
