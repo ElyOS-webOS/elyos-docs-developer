@@ -1,6 +1,9 @@
 ---
 title: Súgó alkalmazás
 description: Kontextusfüggő súgó rendszer alkalmazásokhoz
+next:
+  link: /hu/testing/
+  label: Tesztelés
 ---
 
 :::caution[Fejlesztés alatt]

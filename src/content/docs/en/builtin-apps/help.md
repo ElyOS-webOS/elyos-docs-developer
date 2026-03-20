@@ -1,6 +1,9 @@
 ---
 title: Help Application
 description: Context-sensitive help system for applications
+next:
+  link: /en/testing/
+  label: Testing
 ---
 
 :::caution[Under Development]

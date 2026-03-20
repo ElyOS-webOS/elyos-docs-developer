@@ -1,6 +1,9 @@
 ---
 title: Security
 description: Application security rules, forbidden code patterns, and allowed dependencies
+next:
+  link: /en/builtin-apps/
+  label: Built-in Applications
 ---
 
 ## Overview

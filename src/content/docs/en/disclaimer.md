@@ -1,6 +1,9 @@
 ---
 title: Disclaimer
 description: Legal disclaimer regarding the use of ElyOS software
+next:
+  link: /en/environment/
+  label: Environment Variables
 ---
 
 ElyOS software is provided **"as is"** without any express or implied warranties — including, but not limited to, warranties of merchantability, fitness for a particular purpose, or non-infringement.

@@ -14,23 +14,23 @@ Az ElyOS alkalmazások egy egységes keretrendszert használnak, amely biztosít
 Minden beépített alkalmazás ugyanazt az architektúrát követi:
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                      AppLayout                          │
+┌───────────────────────────────────────────────────────┐
+│                      AppLayout                        │
 │  ┌──────────────┐  ┌──────────────────────────────┐   │
 │  │              │  │                              │   │
-│  │  AppSideBar  │  │     AppContentArea          │   │
-│  │              │  │  (dinamikus komponens)      │   │
+│  │  AppSideBar  │  │     AppContentArea           │   │
+│  │              │  │  (dinamikus komponens)       │   │
 │  │  ┌────────┐  │  │                              │   │
-│  │  │ Menu   │  │  │  - Vite glob import         │   │
-│  │  │ Items  │  │  │  - Lazy loading             │   │
-│  │  └────────┘  │  │  - Props átadás             │   │
+│  │  │ Menu   │  │  │  - Vite glob import          │   │
+│  │  │ Items  │  │  │  - Lazy loading              │   │
+│  │  └────────┘  │  │  - Props átadás              │   │
 │  │              │  │                              │   │
 │  └──────────────┘  └──────────────────────────────┘   │
 │                    ┌──────────────────────────────┐   │
 │                    │      ActionBar               │   │
 │                    │  (opcionális funkciósáv)     │   │
 │                    └──────────────────────────────┘   │
-└─────────────────────────────────────────────────────────┘
+└───────────────────────────────────────────────────────┘
 ```
 
 **Adatfolyam:**

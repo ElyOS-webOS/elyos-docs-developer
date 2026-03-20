@@ -1,6 +1,9 @@
 ---
 title: Hibaelhárítás
 description: Értesítési rendszer hibaelhárítás és fallback működés
+next:
+  link: /hu/ui-components/
+  label: UI Komponensek
 ---
 
 Ez az oldal segít a leggyakoribb problémák megoldásában és részletezi a fallback mechanizmus működését.

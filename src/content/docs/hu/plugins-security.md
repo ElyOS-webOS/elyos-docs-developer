@@ -1,6 +1,9 @@
 ---
 title: Biztonság
 description: Alkalmazás biztonsági szabályok, tiltott kódminták és engedélyezett függőségek
+next:
+  link: /hu/builtin-apps/
+  label: Beépített alkalmazások
 ---
 
 ## Áttekintés

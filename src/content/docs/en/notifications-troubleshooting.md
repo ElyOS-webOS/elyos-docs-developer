@@ -1,6 +1,9 @@
 ---
 title: Troubleshooting
 description: Notification system troubleshooting and fallback behavior
+next:
+  link: /en/ui-components/
+  label: UI Components
 ---
 
 This page helps resolve the most common issues and explains the fallback mechanism in detail.

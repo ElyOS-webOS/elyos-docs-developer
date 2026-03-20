@@ -284,6 +284,28 @@ export default defineConfig({
 						}
 					]
 				},
+                {
+					label: 'Csomagok',
+					translations: { en: 'Packages' },
+					collapsed: false,
+					items: [
+						{
+							label: 'Áttekintés',
+							translations: { en: 'Overview' },
+							slug: 'packages'
+						},
+						{
+							label: '@elyos/sdk',
+							translations: { en: '@elyos/sdk' },
+							slug: 'plugins-sdk'
+						},
+						{
+							label: '@elyos-dev/create-app',
+							translations: { en: '@elyos-dev/create-app' },
+							slug: 'packages-cli'
+						}
+					]
+				},
 				{
 					label: 'Alkalmazás fejlesztés',
 					translations: { en: 'Application Development' },
@@ -308,11 +330,6 @@ export default defineConfig({
 							label: 'manifest.json',
 							translations: { en: 'manifest.json' },
 							slug: 'plugins-manifest'
-						},
-						{
-							label: 'SDK referencia',
-							translations: { en: 'SDK Reference' },
-							slug: 'plugins-sdk'
 						},
 						{
 							label: 'Szerver függvények',
@@ -414,6 +431,13 @@ export default defineConfig({
 					label: 'Hibaelhárítás',
 					translations: { en: 'Troubleshooting' },
 					slug: 'troubleshooting'
+				},
+                {
+					label: 'Felhasználói dokumentáció',
+					translations: {
+						en: 'User Documentation'
+					},
+					link: 'https://docs.elyos.hu/'
 				}
 			]
 		})
