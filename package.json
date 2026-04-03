@@ -8,16 +8,15 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"docker:build": "export $(cat .env | grep -v '#' | grep -v '^$' | xargs) && docker build -f docker/Dockerfile --build-arg UMAMI_WEBSITE_ID_DOCS=$UMAMI_WEBSITE_ID_DOCS --build-arg GITHUB_URL=$GITHUB_URL -t elyos-docs-developer:latest .",
-		"docker:build:amd64": "export $(cat .env | grep -v '#' | grep -v '^$' | xargs) && docker build -f docker/Dockerfile --platform linux/amd64 --build-arg UMAMI_WEBSITE_ID_DOCS=$UMAMI_WEBSITE_ID_DOCS --build-arg GITHUB_URL=$GITHUB_URL -t elyos-docs-developer:latest .",
-		"docker:build:arm64": "export $(cat .env | grep -v '#' | grep -v '^$' | xargs) && docker build -f docker/Dockerfile --platform linux/arm64 --build-arg UMAMI_WEBSITE_ID_DOCS=$UMAMI_WEBSITE_ID_DOCS --build-arg GITHUB_URL=$GITHUB_URL -t elyos-docs-developer:latest .",
-		"docker:save": "docker save -o docker/elyos-docs-developer.tar elyos-docs-developer:latest",
-        "docker:save:zstd": "docker save elyos-docs-developer:latest | zstd -9 > ./docker/elyos-docs-developer.tar.zst"
+		"docker:build": "export $(cat .env | grep -v '#' | grep -v '^$' | xargs) && docker build -f docker/Dockerfile --build-arg UMAMI_WEBSITE_ID_DOCS=$UMAMI_WEBSITE_ID_DOCS --build-arg GITHUB_URL=$GITHUB_URL -t elyos-docs:latest .",
+		"docker:build:amd64": "export $(cat .env | grep -v '#' | grep -v '^$' | xargs) && docker build -f docker/Dockerfile --platform linux/amd64 --build-arg UMAMI_WEBSITE_ID_DOCS=$UMAMI_WEBSITE_ID_DOCS --build-arg GITHUB_URL=$GITHUB_URL -t elyos-docs:latest .",
+		"docker:build:arm64": "export $(cat .env | grep -v '#' | grep -v '^$' | xargs) && docker build -f docker/Dockerfile --platform linux/arm64 --build-arg UMAMI_WEBSITE_ID_DOCS=$UMAMI_WEBSITE_ID_DOCS --build-arg GITHUB_URL=$GITHUB_URL -t elyos-docs:latest .",
+		"docker:save": "docker save -o docker/elyos-docs.tar elyos-docs:latest"
 	},
 	"dependencies": {
-		"@astrojs/starlight": "^0.37.7",
+		"@astrojs/starlight": "^0.38.2",
 		"@fontsource/inter": "^5.2.8",
-		"astro": "^5.18.1",
+		"astro": "^6.1.2",
 		"sharp": "^0.34.2"
 	}
 }
