@@ -3,17 +3,18 @@ title: Log alkalmazás
 description: Rendszer és hibanaplók megjelenítése és szűrése
 ---
 
-A Log alkalmazás lehetővé teszi a rendszer naplóinak megtekintését, szűrését és elemzését. Jelenleg a hibanaplók (error logs) megjelenítését támogatja, az aktivitási naplók (activity logs) fejlesztés alatt állnak.
+A Log alkalmazás lehetővé teszi a rendszer naplóinak megtekintését, szűrését és elemzését. Két fő naplótípust támogat: hibanaplók (error logs) és aktivitási naplók (activity logs).
 
 ## Áttekintés
 
 A Log alkalmazás két fő részből áll:
 - **Hibanaplók** (Error Log) - Rendszer hibák, figyelmeztetések és debug üzenetek
-- **Aktivitási naplók** (Activity Log) - Felhasználói műveletek naplózása (fejlesztés alatt)
+- **Aktivitási naplók** (Aktivitás napló) - Felhasználói és adminisztrátori műveletek naplózása
 
 ### Főbb funkciók
 
 - Hibanaplók megjelenítése táblázatos formában
+- Aktivitási naplók megjelenítése táblázatos formában
 - Szűrés log szint szerint (debug, info, warn, error, fatal)
 - Szűrés forrás (source) szerint
 - Rendezés oszloponként
@@ -28,10 +29,12 @@ apps/log/
 ├── index.svelte              # Fő layout (AppLayout + menü)
 ├── menu.json                 # Menü definíció (Error, Activity)
 ├── error-logs.remote.ts      # Server action hibanaplók lekéréséhez
+├── activity-logs.remote.ts   # Server action aktivitási naplók lekéréséhez
 └── components/
     ├── ErrorLog.svelte       # Hibanaplók táblázat szűrőkkel
-    ├── ActivityLog.svelte    # Aktivitási naplók (placeholder)
-    └── errorLogColumns.ts    # Táblázat oszlopdefiníciók
+    ├── errorLogColumns.ts    # Hiba napló oszlopdefiníciók
+    ├── ActivityLog.svelte    # Aktivitási naplók táblázat szűrőkkel
+    └── activityLogColumns.ts # Aktivitás napló oszlopdefiníciók
 ```
 
 ## Menü struktúra
@@ -58,7 +61,7 @@ A `menu.json` definiálja az alkalmazás menüpontjait:
 
 **Jogosultságok:**
 - `log.error.view` - Hibanaplók megtekintése (csak admin)
-- Activity Log jelenleg nincs jogosultsághoz kötve
+- `log.activity.view` - Aktivitási naplók megtekintése (csak admin)
 
 ## Server Actions
 
@@ -186,11 +189,7 @@ Bármely szűrő vagy táblázat állapot változásakor automatikusan újratöl
 
 ### ActivityLog.svelte
 
-Placeholder komponens az aktivitási naplókhoz (fejlesztés alatt).
-
-```svelte
-<h2>{t('log.activity.title')}</h2>
-```
+Aktivitási naplók megjelenítése DataTable komponenssel, szűrőkkel és lapozással. Részletes dokumentáció: [Aktivitás napló](/hu/activity-log).
 
 ### errorLogColumns.ts
 

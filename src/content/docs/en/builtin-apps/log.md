@@ -3,17 +3,18 @@ title: Log Application
 description: Viewing and filtering system and error logs
 ---
 
-The Log application allows viewing, filtering, and analyzing system logs. It currently supports displaying error logs; activity logs are under development.
+The Log application allows viewing, filtering, and analyzing system logs. It supports two main log types: error logs and activity logs.
 
 ## Overview
 
 The Log application consists of two main parts:
 - **Error Logs** — System errors, warnings, and debug messages
-- **Activity Logs** — User action logging (under development)
+- **Activity Logs** — User and administrator action logging
 
 ### Main features
 
 - Display error logs in tabular form
+- Display activity logs in tabular form
 - Filter by log level (debug, info, warn, error, fatal)
 - Filter by source
 - Sort by column
@@ -28,10 +29,12 @@ apps/log/
 ├── index.svelte              # Main layout (AppLayout + menu)
 ├── menu.json                 # Menu definition (Error, Activity)
 ├── error-logs.remote.ts      # Server action for fetching error logs
+├── activity-logs.remote.ts   # Server action for fetching activity logs
 └── components/
     ├── ErrorLog.svelte       # Error logs table with filters
-    ├── ActivityLog.svelte    # Activity logs (placeholder)
-    └── errorLogColumns.ts    # Table column definitions
+    ├── errorLogColumns.ts    # Error log column definitions
+    ├── ActivityLog.svelte    # Activity logs table with filters
+    └── activityLogColumns.ts # Activity log column definitions
 ```
 
 ## Menu structure
@@ -58,7 +61,7 @@ The `menu.json` defines the application menu items:
 
 **Permissions:**
 - `log.error.view` — View error logs (admin only)
-- Activity Log is currently not permission-restricted
+- `log.activity.view` — View activity logs (admin only)
 
 ## Server Actions
 

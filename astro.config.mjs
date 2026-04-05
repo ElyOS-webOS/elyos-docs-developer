@@ -176,6 +176,11 @@ export default defineConfig({
 							slug: 'logging'
 						},
 						{
+							label: 'Aktivitás napló',
+							translations: { en: 'Activity Log' },
+							slug: 'activity-log'
+						},
+						{
 							label: 'Értesítések',
 							translations: { en: 'Notifications' },
 							collapsed: false,
