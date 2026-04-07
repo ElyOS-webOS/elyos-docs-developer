@@ -1,12 +1,12 @@
 services:
   docs:
-    image: elyos-docs:latest
+    image: elyos-docs-developer:latest
     restart: always
     #ports:
     #  - '3001:4321'
     labels:
       - 'traefik.enable=true'
-      - 'traefik.http.routers.docs.rule=Host(`docs.elyos.hu`)'
+      - 'traefik.http.routers.docs.rule=Host(`docs-dev.elyos.hu`)'
       - 'traefik.http.routers.docs.entrypoints=web'
       - 'traefik.http.services.docs.loadbalancer.server.port=80'
     networks:
