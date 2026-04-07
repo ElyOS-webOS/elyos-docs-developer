@@ -86,17 +86,45 @@ For detailed environment variable descriptions, see [Environment Variables](/en/
 
 ### 3. Start System
 
-**With Bun:**
+ElyOS supports three deployment modes:
+
+#### Full stack (recommended)
+
+Postgres + db-init + app, all in one:
 
 ```bash
 bun docker:up
-```
-
-**Without Bun:**
-
-```bash
+# or
 docker compose -f docker/docker-compose.yml up -d
 ```
+
+#### Bundle mode (postgres + app, SQL-based init)
+
+Ideal when you want to initialize the database from a pre-generated SQL file, without a db-init container:
+
+```bash
+# Generate init SQL (only once, or after schema changes)
+bun db:generate-sql
+
+# Start postgres + app
+bun docker:up:bundle
+# or
+docker compose -f docker/docker-compose.bundle.yml up -d
+```
+
+The `init.sql` is automatically loaded on first startup. Full reset: `docker compose -f docker/docker-compose.bundle.yml down -v`.
+
+#### App only (external database)
+
+If you manage your own PostgreSQL instance:
+
+```bash
+bun docker:up:app
+# or
+docker compose -f docker/docker-compose.app.yml up -d
+```
+
+Set `DATABASE_URL` in your `.env` to point to your database. Migrations and seeding must be done manually.
 
 ### 4. Open Application
 
