@@ -208,6 +208,16 @@ A "Dev Alkalmazások" menüpont csak akkor jelenik meg az Alkalmazás Managerben
 
 Az ElyOS lekéri a `manifest.json`-t a dev szerverről, majd betölti az IIFE bundle-t és Web Component-ként regisztrálja az alkalmazást.
 
+:::tip[Docker-ben fut az ElyOS?]
+Ha az ElyOS Docker konténerben fut (pl. `bun docker:up` paranccsal indítva), a konténer nem éri el a host gép `localhost`-ját. Helyette használd a `host.docker.internal` címet:
+
+```
+http://host.docker.internal:5174
+```
+
+A szerver oldali validáció elfogadja ezt a címet, a böngésző pedig automatikusan `localhost`-ot kap vissza az URL-ben — így a plugin mindkét oldalról helyesen töltődik be.
+:::
+
 :::note
 Ha a "Dev Alkalmazások" menüpont nem jelenik meg, ellenőrizd hogy az ElyOS-t `DEV_MODE=true`-val indítottad-e el.
 :::

@@ -208,6 +208,16 @@ The "Dev Apps" menu item only appears in the App Manager if:
 
 ElyOS fetches the `manifest.json` from the dev server, then loads the IIFE bundle and registers the app as a Web Component.
 
+:::tip[Running ElyOS in Docker?]
+If ElyOS is running inside a Docker container (e.g. via `bun docker:up`), the container cannot reach `localhost` on the host machine. Use `host.docker.internal` instead:
+
+```
+http://host.docker.internal:5174
+```
+
+The server-side validation accepts this address, and the browser will automatically receive `localhost` in the URL — so the plugin loads correctly from both sides.
+:::
+
 :::note
 If the "Dev Apps" menu item doesn't appear, check that ElyOS was started with `DEV_MODE=true`.
 :::
