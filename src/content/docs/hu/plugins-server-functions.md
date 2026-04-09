@@ -64,6 +64,8 @@ Minden szerver függvény megkapja a `context` paramétert:
 | `pluginId` | `string` | A plugin azonosítója |
 | `userId` | `string` | A hívó felhasználó ID-ja |
 | `db` | `object` | Adatbázis kapcsolat (csak `database` jogosultsággal) |
+| `permissions` | `string[]` | A plugin megadott jogosultságai |
+| `email` | `object \| undefined` | Email szolgáltatás (csak `notifications` jogosultsággal) — lásd [Email szolgáltatás](/hu/plugins-email/) |
 
 ```javascript
 export async function myFunction(params, context) {

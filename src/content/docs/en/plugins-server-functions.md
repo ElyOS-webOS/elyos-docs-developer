@@ -64,6 +64,8 @@ Every server function receives the `context` parameter:
 | `pluginId` | `string` | The plugin identifier |
 | `userId` | `string` | The ID of the calling user |
 | `db` | `object` | Database connection (only with `database` permission) |
+| `permissions` | `string[]` | The plugin's granted permissions |
+| `email` | `object \| undefined` | Email service (only with `notifications` permission) — see [Email Service](/en/plugins-email/) |
 
 ```javascript
 export async function myFunction(params, context) {

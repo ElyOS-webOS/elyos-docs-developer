@@ -342,6 +342,12 @@ export default defineConfig({
 							slug: 'plugins-server-functions'
 						},
 						{
+							label: 'Email szolgáltatás',
+							translations: { en: 'Email Service' },
+							slug: 'plugins-email',
+							badge: { text: 'v0.1.7', variant: 'success' }
+						},
+						{
 							label: 'menu.json és AppLayout',
 							translations: { en: 'menu.json & AppLayout' },
 							slug: 'plugins-menu'
