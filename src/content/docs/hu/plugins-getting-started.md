@@ -22,195 +22,119 @@ Az interaktív wizard végigvezet a beállításokon:
 2. **Megjelenítési név** — amit a felhasználók látnak
 3. **Leírás** — rövid leírás
 4. **Szerző** — `Név <email>` formátumban
-5. **Template** — `blank`, `basic`, `advanced`, `datatable`, vagy `sidebar`
-6. **Jogosultságok** — `database`, `notifications`, `remote_functions`
+5. **Funkciók** — válaszd ki, mire van szükséged (lásd lent)
+6. **Függőségek telepítése?** — automatikusan futtatja a `bun install`-t
 
-Vagy megadhatod a nevet és a template-et közvetlenül:
+### Funkció választó
 
-```bash
-bunx @elyos-dev/create-app my-app --template blank
-bunx @elyos-dev/create-app my-app --template basic
-bunx @elyos-dev/create-app my-app --template advanced
-bunx @elyos-dev/create-app my-app --template datatable --no-install
-```
+Fix template-ek helyett a CLI lehetővé teszi, hogy egyedi funkciókból rakd össze a projektedet:
 
-### Elérhető template-ek
-
-| Template | Mire jó |
+| Funkció | Mit ad hozzá |
 |---|---|
-| `starter` | Tiszta lap — csak az SDK, te döntöd el mi kerül bele |
-| `basic` | Egyszerű UI alkalmazás, nincs szerver oldali logika |
-| `advanced` | Szerver függvényekkel, Settings komponenssel |
-| `datatable` | CRUD alkalmazás DataTable-lel és szerver CRUD műveletekkel |
-| `sidebar` | Oldalsávos navigációval rendelkező alkalmazás (AppLayout mód, `menu.json`) |
+| `sidebar` | Oldalsáv navigáció (`menu.json`, `AppLayout` mód, több oldal komponens) |
+| `database` | SQL migrációk, `sdk.data.query()` támogatás, lokális dev adatbázis Docker-rel |
+| `remote_functions` | `server/functions.ts`, `sdk.remote.call()`, lokális dev szerver |
+| `notifications` | `sdk.notifications.send()` támogatás |
+| `i18n` | `locales/hu.json` + `locales/en.json`, `sdk.i18n.t()` támogatás |
+| `datatable` | DataTable komponens insert formmal, sor akciókkal, teljes i18n |
 
-#### `blank` template
+:::note
+A `database` megköveteli a `remote_functions` funkciót — ha `database`-t választasz, a `remote_functions` automatikusan bekapcsol.
+:::
 
-A `blank` template a legminimálisabb kiindulópont: csak az SDK és a kötelező fájlok kerülnek bele. A wizard a template kiválasztása után három follow-up kérdést tesz fel, amelyekkel opcionálisan hozzáadhatók a leggyakoribb funkciók:
+## Generált projekt struktúra
 
-- **Oldalsáv navigáció?** — ha igen, létrejön a `src/components/` mappa egy `Overview.svelte` komponenssel és a `menu.json`
-- **Szerver függvények?** — ha igen, létrejön a `server/functions.ts` egy példa függvénnyel
-- **Adatbázis migrációk?** — ha igen, létrejön a `migrations/001_init.sql` egy minta tábladefinícióval. Az ElyOS installer telepítéskor automatikusan futtatja a migrációkat és prefixeli a táblaneveket a plugin sémájával (`plugin__app_id`)
-- **i18n fordítások?** — ha igen, létrejön a `locales/` mappa `hu.json` és `en.json` fájlokkal
-
-A generált struktúra (minden opcióval):
+A struktúra a kiválasztott funkcióktól függ. Példa minden funkcióval engedélyezve:
 
 ```
 my-app/
-├── manifest.json
+├── manifest.json          # Alkalmazás metaadatok és jogosultságok (kötelező)
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+├── menu.json              # (ha sidebar)
+├── build-all.js           # (ha sidebar) fő + összes komponens buildelése
+├── dev-server.ts          # (ha remote_functions) lokális dev szerver
+├── docker-compose.dev.yml # (ha database) lokális Postgres
+├── .env.example           # (ha database)
 ├── src/
-│   ├── App.svelte           # Fő komponens
-│   ├── main.ts              # Belépési pont
-│   └── components/          # (ha oldalsáv: igen)
-│       └── Overview.svelte
-├── server/                  # (ha szerver függvények: igen)
-│   └── functions.ts
-├── migrations/              # (ha adatbázis migrációk: igen)
-│   └── 001_init.sql
-├── locales/                 # (ha i18n: igen)
-│   ├── hu.json
-│   └── en.json
-└── assets/
-    └── icon.svg
-```
-
-#### `basic` template
-
-A `basic` template egy egyszerű, egyoldalas alkalmazást generál. Ideális kezdőknek és egyszerű alkalmazásokhoz.
-
-A `basic` template egy egyszerű, egyoldalas alkalmazást generál. Ideális kezdőknek és egyszerű alkalmazásokhoz.
-
-A generált struktúra:
-
-```
-my-app/
-├── manifest.json
-├── src/
-│   ├── App.svelte       # Fő komponens
-│   └── main.ts          # Belépési pont
-├── locales/
-│   ├── hu.json
-│   └── en.json
-└── assets/
-    └── icon.svg
-```
-
-#### `advanced` template
-
-Az `advanced` template szerver oldali logikát és egy Settings komponenst tartalmaz. Ideális olyan alkalmazásokhoz, amelyeknek szerver függvényekre van szükségük.
-
-A generált struktúra:
-
-```
-my-app/
-├── manifest.json
-├── src/
-│   ├── App.svelte       # Fő komponens
-│   ├── main.ts          # Belépési pont
-│   └── components/
-│       └── Settings.svelte
-├── server/
-│   └── functions.ts     # Szerver oldali függvények
-├── locales/
-│   ├── hu.json
-│   └── en.json
-└── assets/
-    └── icon.svg
-```
-
-#### `datatable` template
-
-A `datatable` template egy teljes CRUD alkalmazást generál DataTable komponenssel és szerver oldali CRUD műveletekkel. Ideális adatkezelő alkalmazásokhoz.
-
-A generált struktúra:
-
-```
-my-app/
-├── manifest.json
-├── src/
-│   ├── App.svelte       # Fő komponens
-│   ├── main.ts          # Belépési pont
-│   └── components/
-│       ├── DataTable.svelte
-│       └── Settings.svelte
-├── server/
-│   └── functions.ts     # CRUD szerver függvények
-├── locales/
-│   ├── hu.json
-│   └── en.json
-└── assets/
-    └── icon.svg
-```
-
-#### `sidebar` template
-
-A `sidebar` template egy oldalsávos navigációs elrendezést generál, ahol az alkalmazás több oldalból áll. Az ElyOS az `AppLayout` komponensét használja a megjelenítéshez — az alkalmazás ablakának bal oldalán egy navigációs sáv jelenik meg, a jobb oldalon a kiválasztott oldal tartalma.
-
-A generált struktúra:
-
-```
-my-app/
-├── manifest.json
-├── menu.json            # Oldalsáv navigáció definíciója
-├── src/
-│   ├── App.svelte       # Fő komponens (oldalsáv + routing)
-│   └── components/
+│   ├── App.svelte         # Fő komponens / sidebar shell
+│   ├── main.ts            # Belépési pont, Mock SDK init
+│   ├── plugin.ts          # IIFE build belépési pont
+│   └── components/        # (ha sidebar)
 │       ├── Overview.svelte
-│       └── Settings.svelte
-├── locales/
+│       ├── Settings.svelte
+│       ├── Datatable.svelte     # (ha datatable)
+│       ├── Notifications.svelte # (ha notifications)
+│       └── Remote.svelte        # (ha remote_functions)
+├── server/                # (ha remote_functions)
+│   └── functions.ts
+├── migrations/            # (ha database)
+│   ├── 001_init.sql
+│   └── dev/
+│       └── 000_auth_seed.sql
+├── locales/               # (ha i18n)
 │   ├── hu.json
 │   └── en.json
-└── migrations/          # Adatbázis migrációk (ha database permission van)
-    └── 001_init.sql
+└── assets/
+    └── icon.svg
 ```
 
-A `menu.json` határozza meg az oldalsáv menüpontjait:
+## Datatable funkció
+
+Ha a `datatable` + `database` + `remote_functions` mind be van kapcsolva, a generált `Datatable.svelte` tartalmazza:
+
+- Adattáblát `sdk.data.query()` hívással töltve
+- **Beszúró űrlapot** a táblázat alatt (`name` + `value` mezők), core CSS változókkal stílusozva
+- **Sor akciókat**: Duplikálás (elsődleges) és Törlés (másodlagos, destructive) — törlés `sdk.ui.dialog()` megerősítő modallal
+- Teljes i18n támogatást — minden szöveg `t()` hívással, fordítási kulcsok a `locales/` mappában
+
+A generált `server/functions.ts` exportálja:
+
+```ts
+export async function example(params, context) { ... }
+export async function insertItem(params, context) { ... }
+export async function deleteItem(params, context) { ... }
+export async function duplicateItem(params, context) { ... }
+```
+
+Minden függvény az alkalmazás saját `app__<id>` adatbázis sémájára van korlátozva a `context.pluginId` alapján.
+
+## Sidebar funkció
+
+Ha a `sidebar` be van kapcsolva, az alkalmazás `AppLayout` módban fut — az ElyOS navigációs sávot jelenít meg az alkalmazás ablakának bal oldalán. A `menu.json` határozza meg a navigációs elemeket:
 
 ```json
 [
-  { "id": "overview", "labelKey": "menu.overview", "component": "Overview" },
-  { "id": "settings", "labelKey": "menu.settings", "component": "Settings" }
+  { "labelKey": "menu.overview", "href": "#overview", "icon": "Info", "component": "Overview" },
+  { "labelKey": "menu.settings", "href": "#settings", "icon": "Settings", "component": "Settings" }
 ]
 ```
 
-A `labelKey` értékei namespace nélküliek — a rendszer automatikusan hozzáfűzi az `app:{id}.` prefixet a fordítások keresésekor.
+Minden `component` érték a `src/components/` mappában lévő fájlra mutat.
 
-## Projekt struktúra
+## Database funkció
 
-A generált projekt struktúrája:
+Ha a `database` be van kapcsolva, a projekt tartalmazza:
 
-```
-my-app/
-├── manifest.json        # Alkalmazás metaadatok (kötelező)
-├── package.json         # Függőségek és scriptek
-├── vite.config.ts       # Build konfiguráció
-├── tsconfig.json        # TypeScript konfiguráció
-├── src/
-│   ├── main.ts          # Belépési pont, Mock SDK init
-│   ├── App.svelte       # Fő komponens
-│   └── components/      # Alkomponensek (advanced/datatable template-ben)
-├── server/              # Szerver oldali függvények (advanced/datatable)
-│   └── functions.ts
-├── locales/             # Fordítások
-│   ├── hu.json
-│   └── en.json
-└── assets/
-    └── icon.svg         # Alkalmazás ikon
-```
+- `migrations/001_init.sql` — kezdeti séma (a táblaneveket az ElyOS installer automatikusan prefixeli `app__<id>`-vel)
+- `migrations/dev/000_auth_seed.sql` — minimális `auth` séma lokális fejlesztéshez
+- `docker-compose.dev.yml` — lokális Postgres konténer
+- `.env.example` — `DATABASE_URL` és `PORT` konfiguráció
 
-:::note
-Az `sdk-demo` példa alkalmazás megtalálható a monorepo-ban: `examples/apps/sdk-demo/`. Ez a legteljesebb referencia implementáció, érdemes átnézni fejlesztés előtt.
-:::
-
-## Kézi létrehozás (sdk-demo másolása)
-
-Ha a monorepo-n belül dolgozol, másolhatod az sdk-demo példát:
+Lokális fejlesztési workflow:
 
 ```bash
-cp -r examples/apps/sdk-demo examples/apps/my-app
-cd examples/apps/my-app
-# Módosítsd a manifest.json-t (id, name, description)
-bun install
+cp .env.example .env
+bun db:up          # Lokális Postgres indítása
+bun dev:server     # Dev szerver indítása (automatikusan futtatja a migrációkat)
+bun dev            # Vite dev szerver indítása (külön terminálban)
+```
+
+Vagy egy lépésben:
+
+```bash
+bun dev:full       # dev:server + dev párhuzamosan
 ```
 
 ## Függőségek telepítése
@@ -220,15 +144,13 @@ cd my-app
 bun install
 ```
 
-A `@elyos/sdk` csomag elérhető az npm registry-ben és a JSR-en is — tartalmazza a TypeScript típusdefiníciókat és a fejlesztői Mock SDK-t.
-
 ## Első build
 
 ```bash
 bun run build
 ```
 
-Ez létrehozza a `dist/index.iife.js` fájlt — ez az ElyOS által betöltött bundle.
+Ez létrehozza a `dist/index.iife.js` fájlt (és a komponens bundle-öket, ha sidebar engedélyezve van) — ezeket tölti be az ElyOS.
 
 ## Következő lépések
 
