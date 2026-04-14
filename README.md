@@ -4,9 +4,9 @@
 
 ## 🇬🇧 English
 
-Official documentation site for the [ElyOS](https://github.com/ElyOS-webOS) webOS platform.
+Official documentation site for the [Racona](https://github.com/Racona-webOS) webOS platform.
 
-ElyOS is a web-based operating system that delivers a full desktop experience through modern web technologies. This documentation site covers everything users need to know about the platform.
+Racona is an innovative webOS platform that enables you to create a full-featured desktop experience using web technologies. The system’s modular architecture and modern design provide a flexible and extensible solution.
 
 The docs are available in English and Hungarian, organized into the following sections:
 
@@ -29,9 +29,9 @@ The docs are available in English and Hungarian, organized into the following se
 
 ## 🇭🇺 Magyar
 
-Az [ElyOS](https://github.com/ElyOS-webOS) webOS platform hivatalos dokumentációs oldala.
+Az [Racona](https://github.com/Racona-webOS) webOS platform hivatalos dokumentációs oldala.
 
-Az ElyOS egy webalapú operációs rendszer, amely modern webtechnológiák segítségével teljes asztali élményt nyújt. Ez a dokumentációs oldal mindent tartalmaz, amit a felhasználóknak tudniuk kell a rendszerről.
+A Racona egy innovatív webOS platform, amely lehetővé teszi, hogy webes technológiákkal teljes értékű asztali élményt hozz létre. A rendszer moduláris felépítése és modern architektúrája révén rugalmas és bővíthető megoldást kínál. Ez a dokumentációs oldal mindent tartalmaz, amit a felhasználóknak tudniuk kell a rendszerről.
 
 A dokumentáció angol és magyar nyelven érhető el, az alábbi szekciókba rendezve:
 

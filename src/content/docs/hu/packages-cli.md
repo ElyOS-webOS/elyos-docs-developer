@@ -1,6 +1,6 @@
 ---
 title: "@racona/cli"
-description: A Rocona CLI eszköz, amellyel új alkalmazás projektet hozhatsz létre egyetlen paranccsal
+description: A Racona CLI eszköz, amellyel új alkalmazás projektet hozhatsz létre egyetlen paranccsal
 next:
   link: /hu/plugins/
   label: Alkalmazás fejlesztés

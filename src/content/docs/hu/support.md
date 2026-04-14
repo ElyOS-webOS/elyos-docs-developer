@@ -1,9 +1,9 @@
 ---
 title: Támogatás
-description: Támogasd a Rocona fejlesztését Ko-fi-on
+description: Támogasd a Racona fejlesztését Ko-fi-on
 ---
 
-Több éves tapasztalattal rendelkező szoftverfejlesztő vagyok Magyarországról, és a Rocona-t szabadidőmben fejlesztem (egyelőre egyedül) – egy AI-jal közösen, akit szintén etetni kell. 🤑
+Több éves tapasztalattal rendelkező szoftverfejlesztő vagyok Magyarországról, és a Racona-t szabadidőmben fejlesztem (egyelőre egyedül) – egy AI-jal közösen, akit szintén etetni kell. 🤑
 
 Ha hasznosnak találod, vagy csak tetszik, amit csinálok, egy kávé árával is sokat segíthetsz abban, hogy folytathassam.
 
@@ -11,4 +11,4 @@ Ha hasznosnak találod, vagy csak tetszik, amit csinálok, egy kávé árával i
   <img src="/ko-fi.webp" alt="ko-fi" width="200" />
 </a>
 
-*A Rocona mindig ingyenes marad.*
+*A Racona mindig ingyenes marad.*
