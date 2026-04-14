@@ -5,7 +5,7 @@ description: Drizzle ORM használata, séma struktúra, migrációk, repository 
 
 ## Áttekintés
 
-A Rocona PostgreSQL adatbázist használ [Drizzle ORM](https://orm.drizzle.team)-mel. A séma a `packages/database` csomagban él, a repository-k az `apps/web/src/lib/server/database/repositories/` mappában.
+A Racona PostgreSQL adatbázist használ [Drizzle ORM](https://orm.drizzle.team)-mel. A séma a `packages/database` csomagban él, a repository-k az `apps/web/src/lib/server/database/repositories/` mappában.
 
 ## Séma struktúra
 
@@ -259,7 +259,7 @@ Soha ne módosítsd kézzel a generált migrációs fájlokat. Ha hibás migrác
 
 ## Seed adatok
 
-A seed adatok kezdeti adatokat töltenek be az adatbázisba — alapértelmezett felhasználók, szerepkörök, alkalmazások, fordítások stb. A Rocona seed rendszere **idempotens** (biztonságosan futtatható többször is) és **függőség-alapú** (automatikus sorrendezés).
+A seed adatok kezdeti adatokat töltenek be az adatbázisba — alapértelmezett felhasználók, szerepkörök, alkalmazások, fordítások stb. A Racona seed rendszere **idempotens** (biztonságosan futtatható többször is) és **függőség-alapú** (automatikus sorrendezés).
 
 ### Seed struktúra
 

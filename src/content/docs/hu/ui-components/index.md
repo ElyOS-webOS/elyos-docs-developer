@@ -3,7 +3,7 @@ title: UI Komponensek
 description: Racona UI komponensek áttekintése
 ---
 
-A Rocona egy gazdag UI komponens könyvtárat biztosít, amely **shadcn-svelte** alapú komponenseket, **Lucide** ikonokat, **Tailwind CSS 4** stílusokat és egyedi komponenseket tartalmaz. Ezek a komponensek biztosítják az egységes megjelenést és működést az egész rendszerben.
+A Racona egy gazdag UI komponens könyvtárat biztosít, amely **shadcn-svelte** alapú komponenseket, **Lucide** ikonokat, **Tailwind CSS 4** stílusokat és egyedi komponenseket tartalmaz. Ezek a komponensek biztosítják az egységes megjelenést és működést az egész rendszerben.
 
 ## Technológiai stack
 

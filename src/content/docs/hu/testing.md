@@ -1,9 +1,9 @@
 ---
 title: Tesztelés
-description: Tesztelési stratégia és eszközök a Rocona projektben
+description: Tesztelési stratégia és eszközök a Racona projektben
 ---
 
-A Rocona három tesztelési réteget használ a kód minőségének biztosítására.
+A Racona három tesztelési réteget használ a kód minőségének biztosítására.
 
 ## Tesztelési rétegek
 

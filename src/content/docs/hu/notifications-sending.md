@@ -1,9 +1,9 @@
 ---
 title: Értesítés Küldése
-description: Hogyan küldj értesítéseket a Rocona-ben
+description: Hogyan küldj értesítéseket a Racona-ben
 ---
 
-Ez az oldal részletesen bemutatja, hogyan küldhetsz értesítéseket a Rocona-ben kliens és szerver oldalról.
+Ez az oldal részletesen bemutatja, hogyan küldhetsz értesítéseket a Racona-ben kliens és szerver oldalról.
 
 ## Kliens Oldal (Ajánlott)
 

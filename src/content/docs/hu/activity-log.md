@@ -1,6 +1,6 @@
 ---
 title: Aktivitás napló
-description: Felhasználói és rendszerszintű műveletek naplózása a Rocona rendszerben
+description: Felhasználói és rendszerszintű műveletek naplózása a Racona rendszerben
 ---
 
 Az aktivitás napló funkció naplózza a felhasználói és rendszerszintű műveleteket. A bejegyzések a `platform.activity_logs` adatbázis táblában tárolódnak, és a Napló alkalmazásban tekinthetők meg.

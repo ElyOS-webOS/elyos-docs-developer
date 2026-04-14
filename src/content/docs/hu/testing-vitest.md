@@ -1,6 +1,6 @@
 ---
 title: Vitest Unit Tesztek
-description: Unit tesztelés Vitest-tel a Rocona projektben
+description: Unit tesztelés Vitest-tel a Racona projektben
 prev:
   link: /hu/testing/
   label: Tesztelés

@@ -3,7 +3,7 @@ title: Env séma validáció
 description: Környezeti változók typesafe validációja Varlock-kal – séma formátum, típusok és hibaüzenetek
 ---
 
-A Rocona **Varlock**-ot használ az összes környezeti változó typesafe validációjához. A Varlock az alkalmazás indításakor fut — a `node server.js` előtt — így a hibás konfiguráció azonnal kiderül.
+A Racona **Varlock**-ot használ az összes környezeti változó typesafe validációjához. A Varlock az alkalmazás indításakor fut — a `node server.js` előtt — így a hibás konfiguráció azonnal kiderül.
 
 **Részletes dokumentáció:**
 - [Varlock hivatalos oldal](https://varlock.dev/) — teljes Varlock dokumentáció

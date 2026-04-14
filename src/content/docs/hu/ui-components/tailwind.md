@@ -1,9 +1,9 @@
 ---
 title: Tailwind CSS
-description: Tailwind CSS 4 használata a Rocona-ben
+description: Tailwind CSS 4 használata a Racona-ben
 ---
 
-A Rocona **Tailwind CSS 4**-et használ a Vite pluginon keresztül. Nincs `tailwind.config` fájl, a konfiguráció a CSS-ben történik.
+A Racona **Tailwind CSS 4**-et használ a Vite pluginon keresztül. Nincs `tailwind.config` fájl, a konfiguráció a CSS-ben történik.
 
 ## Gyakori utility osztályok
 
@@ -75,7 +75,7 @@ A Rocona **Tailwind CSS 4**-et használ a Vite pluginon keresztül. Nincs `tailw
 
 ### Colors
 
-A Rocona szemantikus színeket használ:
+A Racona szemantikus színeket használ:
 
 ```svelte
 <!-- Background -->

@@ -1,9 +1,9 @@
 ---
 title: Kiegészítő csomagok
-description: A Rocona ökoszisztéma npm és JSR csomagjainak áttekintése – SDK, CLI
+description: A Racona ökoszisztéma npm és JSR csomagjainak áttekintése – SDK, CLI
 ---
 
-A Rocona fejlesztői eszközei önálló csomagként is elérhetők, így nem szükséges a teljes monorepo-t klónozni az alkalmazásfejlesztéshez.
+A Racona fejlesztői eszközei önálló csomagként is elérhetők, így nem szükséges a teljes monorepo-t klónozni az alkalmazásfejlesztéshez.
 
 ## @racona/sdk
 

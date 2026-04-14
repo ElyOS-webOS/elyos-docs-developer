@@ -1,6 +1,6 @@
 ---
 title: Architektúra áttekintés
-description: A Rocona monorepo felépítése, a SvelteKit alkalmazás struktúrája és a főbb rétegek
+description: A Racona monorepo felépítése, a SvelteKit alkalmazás struktúrája és a főbb rétegek
 next:
   link: /hu/environment/
   label: Környezeti változók
@@ -8,7 +8,7 @@ next:
 
 ## Monorepo struktúra
 
-A Rocona Bun workspaces alapú monorepo:
+A Racona Bun workspaces alapú monorepo:
 
 ```
 elyos-core/
@@ -100,7 +100,7 @@ Minden alkalmazás kötelező fájljai:
 
 ## Szerver architektúra
 
-A Rocona két szerver réteget használ:
+A Racona két szerver réteget használ:
 
 **SvelteKit szerver** — a fő alkalmazáslogika, server actions, API route-ok, autentikáció.
 

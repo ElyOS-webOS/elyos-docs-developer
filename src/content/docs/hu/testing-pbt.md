@@ -1,6 +1,6 @@
 ---
 title: Property-based Tesztek
-description: Property-based tesztelés fast-check-kel a Rocona projektben
+description: Property-based tesztelés fast-check-kel a Racona projektben
 ---
 
 A property-based testing (PBT) egy tesztelési módszer, ahol nem konkrét példákat írunk, hanem általános tulajdonságokat (invariánsokat) definiálunk, amelyeknek mindig igaznak kell lenniük.

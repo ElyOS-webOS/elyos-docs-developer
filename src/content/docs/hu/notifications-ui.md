@@ -1,6 +1,6 @@
 ---
 title: UI Komponensek
-description: Értesítési UI komponensek a Rocona-ben
+description: Értesítési UI komponensek a Racona-ben
 ---
 
 Az értesítési rendszer három fő UI komponenst tartalmaz a felhasználói élmény biztosításához.

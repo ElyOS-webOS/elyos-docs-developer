@@ -1,6 +1,6 @@
 ---
 title: E2E Tesztek Playwright-tal
-description: End-to-end tesztelés Playwright-tal a Rocona projektben
+description: End-to-end tesztelés Playwright-tal a Racona projektben
 ---
 
 A Playwright egy modern böngésző automatizálási keretrendszer, amely lehetővé teszi a teljes felhasználói folyamatok tesztelését valós böngésző környezetben.

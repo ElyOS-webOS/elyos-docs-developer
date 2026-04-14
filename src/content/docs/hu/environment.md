@@ -1,9 +1,9 @@
 ---
 title: Környezeti változók
-description: Környezeti változók kezelése a Rocona projektben — Varlock, Infisical és typesafe konfiguráció
+description: Környezeti változók kezelése a Racona projektben — Varlock, Infisical és typesafe konfiguráció
 ---
 
-A Rocona projekt **Varlock**-ot használ a környezeti változók typesafe kezeléséhez. Ez biztosítja, hogy minden konfiguráció validált és típusbiztos legyen, mielőtt az alkalmazás elindul.
+A Racona projekt **Varlock**-ot használ a környezeti változók typesafe kezeléséhez. Ez biztosítja, hogy minden konfiguráció validált és típusbiztos legyen, mielőtt az alkalmazás elindul.
 
 ## Miért fontos?
 
@@ -16,7 +16,7 @@ A környezeti változók kezelése kritikus az alkalmazás működéséhez:
 
 ## Három rétegű architektúra
 
-A Rocona környezeti változó kezelése három rétegből áll:
+A Racona környezeti változó kezelése három rétegből áll:
 
 ### 1. Varlock séma (`.env.schema`)
 

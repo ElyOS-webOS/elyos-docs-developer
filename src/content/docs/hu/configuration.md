@@ -14,7 +14,7 @@ Ez az oldal az **összes elérhető környezeti változó** teljes referenciája
 
 ## Env kezelés
 
-A Rocona **Varlock**-ot használ a typesafe környezeti változók kezeléséhez. A Varlock az alkalmazás indításakor validálja az összes konfigurációs értéket, így a hibás konfiguráció azonnal kiderül.
+A Racona **Varlock**-ot használ a typesafe környezeti változók kezeléséhez. A Varlock az alkalmazás indításakor validálja az összes konfigurációs értéket, így a hibás konfiguráció azonnal kiderül.
 
 ### Bootstrap credentials
 

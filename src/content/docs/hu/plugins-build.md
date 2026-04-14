@@ -23,13 +23,13 @@ Ez a mód **nem** az IIFE bundle-t futtatja — az alkalmazás itt normál Svelt
 bun run build
 ```
 
-Lefordítja az alkalmazást IIFE formátumba a `dist/` mappába. A Vite a `src/app.ts` belépési pontot használja, amely Web Component-ként exportálja az alkalmazást. Ezt a bundle-t tölti be a Rocona.
+Lefordítja az alkalmazást IIFE formátumba a `dist/` mappába. A Vite a `src/app.ts` belépési pontot használja, amely Web Component-ként exportálja az alkalmazást. Ezt a bundle-t tölti be a Racona.
 
 A build eredménye:
 
 ```
 dist/
-└── index.iife.js    # IIFE bundle — ezt tölti be a Rocona
+└── index.iife.js    # IIFE bundle — ezt tölti be a Racona
 ```
 
 ### Statikus dev szerver (Racona-ben való teszteléshez)
@@ -38,7 +38,7 @@ dist/
 bun run dev:server
 ```
 
-Elindítja a `dev-server.ts` Bun HTTP szervert a `http://localhost:5174` címen. A szerver a `dist/` mappából és a projekt gyökeréből szolgálja ki a fájlokat CORS fejlécekkel — a Rocona innen fetch-eli a `manifest.json`-t és az IIFE bundle-t.
+Elindítja a `dev-server.ts` Bun HTTP szervert a `http://localhost:5174` címen. A szerver a `dist/` mappából és a projekt gyökeréből szolgálja ki a fájlokat CORS fejlécekkel — a Racona innen fetch-eli a `manifest.json`-t és az IIFE bundle-t.
 
 :::note
 A `dev:server` futtatása előtt mindig futtasd a `bun run build`-ot, hogy a `dist/index.iife.js` naprakész legyen.
@@ -97,7 +97,7 @@ Például: `hello-world-1.0.0.elyospkg`
 :::note
 A `bun run package` futtatása előtt mindig futtasd a `bun run build`-ot. A script a `zip` rendszerparancsot használja (macOS és Linux rendszereken alapból elérhető).
 
-A generált fájl kiterjesztése a `APP_PACKAGE_EXTENSION` környezeti változóból jön (alapértelmezett: `elyospkg`). Ha a Rocona szervered más kiterjesztéssel van konfigurálva, add meg a változót a csomagolás előtt:
+A generált fájl kiterjesztése a `APP_PACKAGE_EXTENSION` környezeti változóból jön (alapértelmezett: `elyospkg`). Ha a Racona szervered más kiterjesztéssel van konfigurálva, add meg a változót a csomagolás előtt:
 
 ```bash
 APP_PACKAGE_EXTENSION=wospkg bun run package
@@ -130,7 +130,7 @@ A `build-package.js` automatikusan csak azokat a mappákat/fájlokat csomagolja 
 
 ### Alkalmazás Manager UI-n keresztül (ajánlott)
 
-1. Nyisd meg a Rocona-t böngészőben
+1. Nyisd meg a Racona-t böngészőben
 2. Kattints a Start menüre → Alkalmazás Manager
 3. Kattints a "Alkalmazás feltöltése" gombra
 4. Válaszd ki a `.elyospkg` fájlt
@@ -160,7 +160,7 @@ A session token rövid életű és felhasználóhoz kötött. Automatizált CI/C
 
 ### Frissítés
 
-Meglévő alkalmazás frissítésekor növeld a `manifest.json`-ban a verziószámot, majd töltsd fel az új csomagot. A Rocona automatikusan felismeri, hogy frissítésről van szó.
+Meglévő alkalmazás frissítésekor növeld a `manifest.json`-ban a verziószámot, majd töltsd fel az új csomagot. A Racona automatikusan felismeri, hogy frissítésről van szó.
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: Ikonok
-description: Lucide ikonkészlet használata a Rocona-ben
+description: Lucide ikonkészlet használata a Racona-ben
 ---
 
-A Rocona a **Lucide Svelte** ikonkészletet használja, amely ~1400 gyönyörű, konzisztens ikont tartalmaz.
+A Racona a **Lucide Svelte** ikonkészletet használja, amely ~1400 gyönyörű, konzisztens ikont tartalmaz.
 
 ## Alapvető használat
 

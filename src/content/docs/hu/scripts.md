@@ -3,7 +3,7 @@ title: Scripts referencia
 description: Összes elérhető npm/bun script a fejlesztéshez, build-hez, teszteléshez és Docker kezeléshez
 ---
 
-A Rocona egy **Bun workspaces** alapú monorepo. A root `package.json` tartalmazza a fő parancsokat, amelyek a workspace csomagok scriptjeit hívják meg.
+A Racona egy **Bun workspaces** alapú monorepo. A root `package.json` tartalmazza a fő parancsokat, amelyek a workspace csomagok scriptjeit hívják meg.
 
 ## Monorepo struktúra
 

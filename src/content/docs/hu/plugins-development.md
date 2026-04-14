@@ -14,7 +14,7 @@ bunx @racona/cli
 A wizard végigvezet a beállításokon:
 
 1. **App ID** — kebab-case azonosító (pl. `my-app`)
-2. **Display Name** — megjelenítendő név a Rocona-ben
+2. **Display Name** — megjelenítendő név a Racona-ben
 3. **Description** — rövid leírás
 4. **Author** — neved és email-ed
 5. **Features** — válaszd ki a szükséges funkciókat
@@ -213,7 +213,7 @@ Az `initialize()` összes konfigurációs lehetősége:
 | `remote.handlers` | `Record<string, Function>` | Mock szerver függvény handlerek |
 | `assets.baseUrl` | `string` | Asset URL prefix |
 
-Amikor a Rocona betölti az alkalmazást élesben, a `window.webOS` már létezik, ezért az `if (!window.webOS)` feltétel miatt a Mock SDK nem fut le.
+Amikor a Racona betölti az alkalmazást élesben, a `window.webOS` már létezik, ezért az `if (!window.webOS)` feltétel miatt a Mock SDK nem fut le.
 
 ### Remote call mock-olása
 
@@ -244,7 +244,7 @@ A `dev:server` alapértelmezetten az `5175`-ös portot használja (a Vite dev sz
 PORT=5176 bun run dev:server
 ```
 
-A Rocona Dev Alkalmazások betöltőjében az URL-t ennek megfelelően add meg: `http://localhost:5176`.
+A Racona Dev Alkalmazások betöltőjében az URL-t ennek megfelelően add meg: `http://localhost:5176`.
 
 ---
 
@@ -252,7 +252,7 @@ A Rocona Dev Alkalmazások betöltőjében az URL-t ennek megfelelően add meg: 
 
 A standalone dev mód (Mock SDK) csak a UI-t teszteli. Ha valódi SDK hívásokat, adatbázist vagy szerver függvényeket is tesztelni szeretnél, az alkalmazást be kell tölteni egy futó Racona példányba.
 
-A folyamat lényege: **buildeld le az alkalmazást, indíts egy statikus HTTP szervert (`dev:server`), majd töltsd be a Rocona-be URL alapján.** Nincs automatikus hot reload — ha változtattál a kódon, újra kell buildelni és újra megnyitni az alkalmazás ablakát.
+A folyamat lényege: **buildeld le az alkalmazást, indíts egy statikus HTTP szervert (`dev:server`), majd töltsd be a Racona-be URL alapján.** Nincs automatikus hot reload — ha változtattál a kódon, újra kell buildelni és újra megnyitni az alkalmazás ablakát.
 
 :::note[Portok]
 - `5174` — Vite dev szerver (`bun dev`) — standalone fejlesztéshez, Mock SDK-val
@@ -270,7 +270,7 @@ Az `elyos-core` monorepo gyökerében:
 bun app:dev
 ```
 
-A Rocona alapértelmezetten a `http://localhost:5173` címen érhető el. Jelentkezz be admin fiókkal.
+A Racona alapértelmezetten a `http://localhost:5173` címen érhető el. Jelentkezz be admin fiókkal.
 
 ### 2. lépés — Alkalmazás buildelése
 
@@ -280,7 +280,7 @@ Az alkalmazás projekt mappájában:
 bun run build
 ```
 
-Ez létrehozza a `dist/index.iife.js` fájlt — ezt tölti be a Rocona.
+Ez létrehozza a `dist/index.iife.js` fájlt — ezt tölti be a Racona.
 
 ### 3. lépés — Plugin dev szerver indítása
 
@@ -293,27 +293,27 @@ Ez elindítja a `dev-server.ts` Bun HTTP szervert a `http://localhost:5175` cím
 Ha `database` is engedélyezve van, a szerver induláskor automatikusan futtatja a migrációkat, és a `POST /api/remote/:functionName` endpointon keresztül elérhetők a `server/functions.ts` függvényei.
 
 :::note
-A `dev:server` csak statikus fájlokat szolgál ki — nincs hot reload, nincs Vite. Ha módosítottad a kódot, futtasd újra a `bun run build`-ot, majd zárd be és nyisd meg újra az alkalmazás ablakát a Rocona-ben.
+A `dev:server` csak statikus fájlokat szolgál ki — nincs hot reload, nincs Vite. Ha módosítottad a kódot, futtasd újra a `bun run build`-ot, majd zárd be és nyisd meg újra az alkalmazás ablakát a Racona-ben.
 :::
 
-### 4. lépés — Alkalmazás betöltése a Rocona-be
+### 4. lépés — Alkalmazás betöltése a Racona-be
 
 :::caution[Előfeltételek]
 A "Dev Alkalmazások" menüpont csak akkor jelenik meg az Alkalmazás Managerben, ha:
-- A Rocona `.env.local` fájlban `DEV_MODE=true` van beállítva
+- A Racona `.env.local` fájlban `DEV_MODE=true` van beállítva
 - A bejelentkezett felhasználónak van `app.manual.install` jogosultsága (admin fióknak alapból van)
 :::
 
-1. Nyisd meg a Rocona-t a böngészőben
+1. Nyisd meg a Racona-t a böngészőben
 2. Start menü → Alkalmazás Manager
 3. A bal oldalsávban kattints a **"Dev Alkalmazások"** menüpontra
 4. Megjelenik egy URL beviteli mező `http://localhost:5175` alapértelmezett értékkel
 5. Kattints a **"Load"** gombra
 
-A Rocona lekéri a `manifest.json`-t a dev szerverről, majd betölti az IIFE bundle-t és Web Component-ként regisztrálja az alkalmazást.
+A Racona lekéri a `manifest.json`-t a dev szerverről, majd betölti az IIFE bundle-t és Web Component-ként regisztrálja az alkalmazást.
 
-:::tip[Docker-ben fut a Rocona?]
-Ha a Rocona Docker konténerben fut (pl. `bun docker:up` paranccsal indítva), a konténer nem éri el a host gép `localhost`-ját. Helyette használd a `host.docker.internal` címet:
+:::tip[Docker-ben fut a Racona?]
+Ha a Racona Docker konténerben fut (pl. `bun docker:up` paranccsal indítva), a konténer nem éri el a host gép `localhost`-ját. Helyette használd a `host.docker.internal` címet:
 
 ```
 http://host.docker.internal:5174
@@ -328,7 +328,7 @@ A szerver oldali validáció elfogadja ezt a címet, a böngésző pedig automat
 # 1. Újrabuildelés
 bun run build
 
-# 2. A Rocona-ben: zárd be az alkalmazás ablakát, majd nyisd meg újra
+# 2. A Racona-ben: zárd be az alkalmazás ablakát, majd nyisd meg újra
 #    (a "Load" gombot nem kell újra megnyomni — az alkalmazás már a listában van)
 ```
 
@@ -370,7 +370,7 @@ bun run dev:server     # dev szerver + migrációk + remote endpoint (http://loc
 
 ## Plugin telepítése (`.elyospkg`)
 
-Ha az alkalmazás fejlesztése kész, csomagold be és telepítsd a Rocona-be.
+Ha az alkalmazás fejlesztése kész, csomagold be és telepítsd a Racona-be.
 
 ### Csomag elkészítése
 
@@ -389,14 +389,14 @@ Ez létrehozza a `{id}-{version}.elyospkg` fájlt (pl. `my-app-1.0.0.elyospkg`).
 - `server/` — szerver oldali függvények (ha van)
 - `migrations/` — adatbázis migrációk (ha van, dev seed fájlok nélkül)
 
-### Feltöltés a Rocona-be
+### Feltöltés a Racona-be
 
 1. Start menü → Alkalmazás Manager → **Plugin Feltöltés**
 2. Húzd rá a `.elyospkg` fájlt, vagy kattints a böngészés gombra
-3. A Rocona validálja a csomagot, majd megmutatja az előnézetet
+3. A Racona validálja a csomagot, majd megmutatja az előnézetet
 4. Kattints a **Telepítés** gombra
 
-A telepítés során a Rocona:
+A telepítés során a Racona:
 - Kicsomagolja a fájlokat a plugin tárolóba
 - Regisztrálja az alkalmazást az app registry-ben
 - Importálja a fordításokat (ha van `locales/`)
@@ -662,7 +662,7 @@ CREATE TABLE items (
 ```
 
 :::note
-A táblaneveket nem kell sémával prefixelni a migrációs fájlokban — a Rocona telepítéskor automatikusan hozzáadja a `app__{plugin_id}` prefixet.
+A táblaneveket nem kell sémával prefixelni a migrációs fájlokban — a Racona telepítéskor automatikusan hozzáadja a `app__{plugin_id}` prefixet.
 :::
 
 A `migrations/dev/` mappában lévő fájlok csak fejlesztési célra szolgálnak (pl. seed adatok) — a `.elyospkg` csomagba nem kerülnek bele.
@@ -749,4 +749,4 @@ A manifest `dependencies` mezőjében csak fehérlistán lévő package-ek szere
 | `"Module not found"` | Futtasd le: `bun run build` |
 | `"Plugin already exists"` | Az adott ID-vel már telepítve van egy plugin — távolítsd el előbb |
 | `"Plugin is inactive"` | A plugin inaktív állapotban van — aktiváld az Alkalmazás Managerben |
-| Dev alkalmazás nem jelenik meg | Ellenőrizd, hogy `DEV_MODE=true` van-e a Rocona `.env.local`-ban |
+| Dev alkalmazás nem jelenik meg | Ellenőrizd, hogy `DEV_MODE=true` van-e a Racona `.env.local`-ban |

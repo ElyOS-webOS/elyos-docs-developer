@@ -8,7 +8,7 @@ next:
 
 ## Áttekintés
 
-A Rocona alkalmazás rendszer sandbox-olt környezetben futtatja az alkalmazásokat. A rendszer statikus kódelemzéssel ellenőrzi a feltöltött alkalmazásokat, és visszautasítja azokat, amelyek tiltott mintákat tartalmaznak.
+A Racona alkalmazás rendszer sandbox-olt környezetben futtatja az alkalmazásokat. A rendszer statikus kódelemzéssel ellenőrzi a feltöltött alkalmazásokat, és visszautasítja azokat, amelyek tiltott mintákat tartalmaznak.
 
 ---
 

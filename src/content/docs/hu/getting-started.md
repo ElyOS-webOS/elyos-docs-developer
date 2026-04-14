@@ -1,6 +1,6 @@
 ---
 title: Első lépések
-description: Fejlesztői környezet beállítása, függőségek telepítése és a Rocona lokális futtatása
+description: Fejlesztői környezet beállítása, függőségek telepítése és a Racona lokális futtatása
 ---
 
 ## Előfeltételek
@@ -37,7 +37,7 @@ bun install
 cp .env.example .env
 ```
 
-A Rocona **Varlock**-ot használ a typesafe env kezeléshez. A `.env` fájlban csak a **bootstrap credentials** szükséges — minden más secret az Infisical-ból érkezik indításkor.
+A Racona **Varlock**-ot használ a typesafe env kezeléshez. A `.env` fájlban csak a **bootstrap credentials** szükséges — minden más secret az Infisical-ból érkezik indításkor.
 
 **Részletes dokumentáció:** [Környezeti változók →](/hu/environment)
 

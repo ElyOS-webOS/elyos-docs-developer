@@ -3,13 +3,13 @@ title: Adat validáció
 description: Server action input és kliensoldali adat validáció Valibottal – sémák, típuskövetkeztetés és használat
 ---
 
-A Rocona **Valibot**-ot használ minden server action input és kliensoldali adat validálásához. A Valibot egy könnyűsúlyú, TypeScript-first validációs könyvtár, amely tree-shaking-barát és kiváló típuskövetkeztetést biztosít.
+A Racona **Valibot**-ot használ minden server action input és kliensoldali adat validálásához. A Valibot egy könnyűsúlyú, TypeScript-first validációs könyvtár, amely tree-shaking-barát és kiváló típuskövetkeztetést biztosít.
 
 **Hivatalos dokumentáció:** [valibot.dev](https://valibot.dev/)
 
 ## Telepítés
 
-A Valibot már része a Rocona függőségeinek:
+A Valibot már része a Racona függőségeinek:
 
 ```typescript
 import * as v from 'valibot';

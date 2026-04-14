@@ -3,7 +3,7 @@ title: Validáció
 description: Env séma validáció Varlock-kal és adat validáció Valibottal – szerveroldali és kliensoldali használat
 ---
 
-A Rocona két különböző validációs réteget használ:
+A Racona két különböző validációs réteget használ:
 
 - **Varlock** — env változók typesafe validációja az alkalmazás indításakor
 - **Valibot** — adat validáció server action inputokhoz és kliensoldali űrlapokhoz
@@ -12,7 +12,7 @@ A Rocona két különböző validációs réteget használ:
 
 ## Env séma validáció (Varlock)
 
-A Rocona **Varlock**-ot használ az összes környezeti változó typesafe validációjához. A Varlock az alkalmazás indításakor fut — a `node server.js` előtt — így a hibás konfiguráció azonnal kiderül.
+A Racona **Varlock**-ot használ az összes környezeti változó typesafe validációjához. A Varlock az alkalmazás indításakor fut — a `node server.js` előtt — így a hibás konfiguráció azonnal kiderül.
 
 ### Az Env_Schema fájl
 
@@ -91,11 +91,11 @@ Ha a validáció sikertelen, a Varlock naplózza a konkrét hibát és leállít
 
 ## Adat validáció (Valibot)
 
-A Rocona **Valibot**-ot használ minden server action input és kliensoldali adat validálásához. A Valibot egy könnyűsúlyú, TypeScript-first validációs könyvtár, amely tree-shaking-barát és kiváló típuskövetkeztetést biztosít.
+A Racona **Valibot**-ot használ minden server action input és kliensoldali adat validálásához. A Valibot egy könnyűsúlyú, TypeScript-first validációs könyvtár, amely tree-shaking-barát és kiváló típuskövetkeztetést biztosít.
 
 ### Telepítés
 
-A Valibot már része a Rocona függőségeinek:
+A Valibot már része a Racona függőségeinek:
 
 ```typescript
 import * as v from 'valibot';

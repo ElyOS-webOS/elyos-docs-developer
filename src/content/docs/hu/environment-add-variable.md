@@ -3,7 +3,7 @@ title: Új változó hozzáadása
 description: Lépésről lépésre útmutató új környezeti változó hozzáadásához
 ---
 
-Ha új környezeti változót adsz hozzá a Rocona projekthez, **3 helyen kell frissítened** a kódot.
+Ha új környezeti változót adsz hozzá a Racona projekthez, **3 helyen kell frissítened** a kódot.
 
 ## Checklist
 

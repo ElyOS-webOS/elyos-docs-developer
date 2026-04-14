@@ -3,11 +3,11 @@ title: Beépített alkalmazások
 description: Racona beépített alkalmazásainak áttekintése és alkalmazás keretrendszer
 ---
 
-A Rocona rendszer 6 beépített alkalmazással érkezik, amelyek a rendszer alapvető funkcióit biztosítják. Minden alkalmazás egy egységes keretrendszert használ, amely biztosítja a konzisztens felhasználói élményt és a könnyű bővíthetőséget.
+A Racona rendszer 6 beépített alkalmazással érkezik, amelyek a rendszer alapvető funkcióit biztosítják. Minden alkalmazás egy egységes keretrendszert használ, amely biztosítja a konzisztens felhasználói élményt és a könnyű bővíthetőséget.
 
 ## Alkalmazás keretrendszer
 
-A Rocona alkalmazások egy egységes keretrendszert használnak, amely biztosítja a konzisztens felhasználói élményt, a könnyű bővíthetőséget és a hatékony állapotkezelést. A keretrendszer központi eleme az **AppShell** (állapotkezelő logika) és az **AppLayout** (vizuális struktúra), amelyek együttműködve kezelik a menünavigációt, a dinamikus komponens betöltést és az alkalmazás életciklusát.
+A Racona alkalmazások egy egységes keretrendszert használnak, amely biztosítja a konzisztens felhasználói élményt, a könnyű bővíthetőséget és a hatékony állapotkezelést. A keretrendszer központi eleme az **AppShell** (állapotkezelő logika) és az **AppLayout** (vizuális struktúra), amelyek együttműködve kezelik a menünavigációt, a dinamikus komponens betöltést és az alkalmazás életciklusát.
 
 ### Architektúra áttekintés
 

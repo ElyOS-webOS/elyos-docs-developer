@@ -1,9 +1,9 @@
 ---
 title: Hozzájárulás
-description: Útmutató a Rocona projekthez való hozzájáruláshoz
+description: Útmutató a Racona projekthez való hozzájáruláshoz
 ---
 
-Köszönjük, hogy érdeklődsz a Rocona fejlesztése iránt! Ez az útmutató segít az indulásban, bemutatja a konvencióinkat, és végigvezet az első hozzájárulás beküldésén.
+Köszönjük, hogy érdeklődsz a Racona fejlesztése iránt! Ez az útmutató segít az indulásban, bemutatja a konvencióinkat, és végigvezet az első hozzájárulás beküldésén.
 
 ## Magatartási kódex
 
@@ -73,7 +73,7 @@ A kódbázis belső megjegyzésekhez, változónevekhez és dokumentációhoz **
 
 ### Svelte 5
 
-A Rocona **Svelte 5-öt rune-okkal** használ. Főbb minták:
+A Racona **Svelte 5-öt rune-okkal** használ. Főbb minták:
 
 - Reaktivitáshoz használd a `$state`, `$derived` és `$effect` rune-okat (ne a régi `$:` szintaxist)
 - Osztályalapú store-ok `$state` tulajdonságokkal, `createX()` / `setX()` / `getX()` függvényeken keresztül exportálva
@@ -333,11 +333,11 @@ Ha bármilyen kérdésed van, vagy elakadtál:
 - **Dokumentáció** — nézd meg ezt a dokumentációs oldalt az útmutatókért
 - **Hibaelhárítás** — gyakori problémák megoldásai: [Hibaelhárítás →](/hu/troubleshooting)
 
-Köszönjük, hogy hozzájárulsz a Rocona-hoz! Minden hozzájárulás számít, legyen bármilyen kicsi. 🎉
+Köszönjük, hogy hozzájárulsz a Racona-hoz! Minden hozzájárulás számít, legyen bármilyen kicsi. 🎉
 
 ## Támogatás
 
-Több éves tapasztalattal rendelkező szoftverfejlesztő vagyok Magyarországról, és a Rocona-t szabadidőmben fejlesztem (egyelőre egyedül) – egy AI-jal közösen, akit szintén etetni kell. 🤑
+Több éves tapasztalattal rendelkező szoftverfejlesztő vagyok Magyarországról, és a Racona-t szabadidőmben fejlesztem (egyelőre egyedül) – egy AI-jal közösen, akit szintén etetni kell. 🤑
 
 Ha hasznosnak találod, vagy csak tetszik, amit csinálok, egy kávé árával is sokat segíthetsz abban, hogy folytathassam.
 

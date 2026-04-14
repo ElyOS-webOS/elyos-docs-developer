@@ -1,9 +1,9 @@
 ---
 title: Docker
-description: Docker használata a Rocona fejlesztésében és üzemeltetésében
+description: Docker használata a Racona fejlesztésében és üzemeltetésében
 ---
 
-A Rocona teljes mértékben támogatja a Docker-alapú fejlesztést és üzemeltetést. Ez a dokumentum részletesen bemutatja, hogyan használható a Docker a Rocona-szel.
+A Racona teljes mértékben támogatja a Docker-alapú fejlesztést és üzemeltetést. Ez a dokumentum részletesen bemutatja, hogyan használható a Docker a Racona-szel.
 
 ## Miért Docker?
 
@@ -86,7 +86,7 @@ A környezeti változók részletes leírásáért lásd a [Környezeti változ�
 
 ### 3. Rendszer indítása
 
-A Rocona három deployment módot támogat:
+A Racona három deployment módot támogat:
 
 #### Teljes stack (ajánlott)
 
@@ -184,7 +184,7 @@ db-init:
 
 ### 3. elyos
 
-A Rocona webalkalmazás (SvelteKit + Express + Socket.IO).
+A Racona webalkalmazás (SvelteKit + Express + Socket.IO).
 
 ```yaml
 elyos:
